@@ -2,7 +2,7 @@
 
 /**
  * Doubly Linked Node Iterator
- * Defines Doubley Linked Nodes to be used in Lists.
+ * Defines Doubley Linked Node Iterators to be used in Lists.
  * Developed by James P Galovic.
  * Code adapted from code developed for COS30008 - Data Structures and Patterns
  */
@@ -40,7 +40,7 @@ public:
 };
 
 template<class T>
-DLNodeIter<T>::DLNodeIter(const DLNode<T>& aList)
+inline DLNodeIter<T>::DLNodeIter(const DLNode<T>& aList)
 {
 	// Set Left
 	fLeft = &aList;
@@ -63,13 +63,13 @@ DLNodeIter<T>::DLNodeIter(const DLNode<T>& aList)
 }
 
 template<class T>
-const T & DLNodeIter<T>::operator*() const
+inline const T & DLNodeIter<T>::operator*() const
 {
 	return fCurrent->getValue();
 }
 
 template<class T>
-DLNodeIter<T> & DLNodeIter<T>::operator++()
+inline DLNodeIter<T> & DLNodeIter<T>::operator++()
 {
 	switch (fState)
 	{
@@ -91,7 +91,7 @@ DLNodeIter<T> & DLNodeIter<T>::operator++()
 }
 
 template<class T>
-DLNodeIter<T> DLNodeIter<T>::operator++(int)
+inline DLNodeIter<T> DLNodeIter<T>::operator++(int)
 {
 	DLNodeIter<T> lTemp = *this;
 	++(*this);
@@ -99,7 +99,7 @@ DLNodeIter<T> DLNodeIter<T>::operator++(int)
 }
 
 template<class T>
-DLNodeIter<T> & DLNodeIter<T>::operator--()
+inline DLNodeIter<T> & DLNodeIter<T>::operator--()
 {
 	switch (fState)
 	{
@@ -122,7 +122,7 @@ DLNodeIter<T> & DLNodeIter<T>::operator--()
 }
 
 template<class T>
-DLNodeIter<T> DLNodeIter<T>::operator--(int)
+inline DLNodeIter<T> DLNodeIter<T>::operator--(int)
 {
 	DLNodeIter<T> lTemp = *this;
 	--(*this);
@@ -130,19 +130,19 @@ DLNodeIter<T> DLNodeIter<T>::operator--(int)
 }
 
 template<class T>
-bool DLNodeIter<T>::operator==(const DLNodeIter<T> & aOther) const
+inline bool DLNodeIter<T>::operator==(const DLNodeIter<T> & aOther) const
 {
 	return fLeft == aOther.fLeft && fRight == aOther.fRight && fCurrent == aOther.fCurrent && fState == aOther.fState;
 }
 
 template<class T>
-bool DLNodeIter<T>::operator!=(const DLNodeIter<T> & aOther) const
+inline bool DLNodeIter<T>::operator!=(const DLNodeIter<T> & aOther) const
 {
 	return !(this == aOther);
 }
 
 template<class T>
-DLNodeIter<T> DLNodeIter<T>::left() const
+inline DLNodeIter<T> DLNodeIter<T>::left() const
 {
 	DLNodeIter<T> lTemp = *this;
 
@@ -153,19 +153,19 @@ DLNodeIter<T> DLNodeIter<T>::left() const
 }
 
 template<class T>
-DLNodeIter<T> DLNodeIter<T>::first() const
+inline DLNodeIter<T> DLNodeIter<T>::first() const
 {
 	return ++(left());
 }
 
 template<class T>
-DLNodeIter<T> DLNodeIter<T>::last() const
+inline DLNodeIter<T> DLNodeIter<T>::last() const
 {
 	return --(right());
 }
 
 template<class T>
-DLNodeIter<T> DLNodeIter<T>::right() const
+inline DLNodeIter<T> DLNodeIter<T>::right() const
 {
 	DLNodeIter<T> lTemp = *this;
 

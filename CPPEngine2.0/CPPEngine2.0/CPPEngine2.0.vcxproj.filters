@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Container">
+      <UniqueIdentifier>{ea656633-80ea-4b7a-9e52-315412efd1a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -21,7 +24,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DLNode.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="DLNodeIter.h">
+      <Filter>Header Files\Container</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -30,7 +30,7 @@ public:
 };
 
 template<class T>
-DLNode<T>::DLNode()
+inline DLNode<T>::DLNode()
 {
 	fValue = T();
 	fNext = nullptr;
@@ -38,7 +38,7 @@ DLNode<T>::DLNode()
 }
 
 template<class T>
-DLNode<T>::DLNode(const T & aValue)
+inline DLNode<T>::DLNode(const T & aValue)
 {
 	fValue = aValue;
 	fPrevious = nullptr;
@@ -46,7 +46,7 @@ DLNode<T>::DLNode(const T & aValue)
 }
 
 template<class T>
-void DLNode<T>::prepend(DLNode<T>& aNode)
+inline void DLNode<T>::prepend(DLNode<T>& aNode)
 {
 	aNode.fNext = this;
 	if (fPrevious != nullptr) // insert at previous if previous exsists.
@@ -58,7 +58,7 @@ void DLNode<T>::prepend(DLNode<T>& aNode)
 }
 
 template<class T>
-void DLNode<T>::append(DLNode<T>& aNode)
+inline void DLNode<T>::append(DLNode<T>& aNode)
 {
 	aNode.fPrevious = this;
 	if (fNext != nullptr) // insert at next if next exsists.
@@ -70,7 +70,7 @@ void DLNode<T>::append(DLNode<T>& aNode)
 }
 
 template<class T>
-void DLNode<T>::remove()
+inline void DLNode<T>::remove()
 {
 	if (fPrevious != nullptr)
 		fPrevious->fNext = fNext;
@@ -79,19 +79,19 @@ void DLNode<T>::remove()
 }
 
 template<class T>
-const T & DLNode<T>::getValue() const
+inline const T & DLNode<T>::getValue() const
 {
 	return fValue;
 }
 
 template<class T>
-const DLNode<T>& DLNode<T>::getNext() const
+inline const DLNode<T>& DLNode<T>::getNext() const
 {
 	return *fNext;
 }
 
 template<class T>
-const DLNode<T>& DLNode<T>::getPrevious() const
+inline const DLNode<T>& DLNode<T>::getPrevious() const
 {
 	return *fPrevious;
 }
